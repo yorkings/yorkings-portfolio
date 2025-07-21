@@ -1,8 +1,27 @@
+/* src/index.css */
 @import "tailwindcss";
 
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+/* Define a custom variant for dark mode using a class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* You can also define your base styles here */
+/* For example, for smooth transitions when changing theme */
+html.dark {
+  /* This ensures a smooth transition for colors */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html:not(.dark) {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: Define default background/text for light mode */
+body {
+  background-color: theme('colors.white'); /* Use Tailwind's default white */
+  color: theme('colors.gray.900'); /* Use Tailwind's default gray-900 */
+}
+
+/* Apply dark mode styles to the body when the 'dark' class is present */
+.dark body {
+  background-color: theme('colors.gray.900');
+  color: theme('colors.gray.50');
 }
