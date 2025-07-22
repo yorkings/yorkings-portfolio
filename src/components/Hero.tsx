@@ -1,34 +1,43 @@
-import { Link } from "react-router-dom";
-import ThemeToggle from "./Themetoggle.tsx"; // Ensure .tsx extension
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
+import { containerVariants, itemVariants } from "../utils/Motion"
 
 const Hero = () => {
-  return (
-    <nav className="bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 p-4 flex items-center justify-between  shadow-md transition-colors duration-300 ">
-      {/* Brand/Logo Section */}
-      <h1 className="text-2xl font-bold">
-        <Link to="/" className="hover:text-cyan-600 dark:hover:text-cyan-400">
-          yorkings.dev
-        </Link>
-      </h1>
-      {/* Navigation Links and Theme Toggle */}
-      <div className="flex items-center space-x-6">
-        <Link   to="/" className="text-lg font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200">
-          Home
-        </Link>
-        <Link to="/about" className="text-lg font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200">
-          About
-        </Link>
-        <Link to="/projects" className="text-lg font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200" >
-          Projects
-        </Link>
-        <Link to="/contact" className="text-lg font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200">
-          Contact
-        </Link>
-        {/* Theme Toggle Button */}
-        <ThemeToggle />
-      </div>
-    </nav>
-  );
-};
+  const MotionLink = motion(Link)
 
-export default Hero;
+  return (
+    <motion.div
+      className="max-w-3xl mx-auto w-full text-center px-4"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
+      >
+        Hi, I'm <span className="text-blue-600 dark:text-blue-400">Kerauni Yorke Nyakundi</span>
+      </motion.h1>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
+      >
+        Full-Stack Developer | AI Innovator | Big Project Architect | Data Enthusiast
+      </motion.p>
+
+      <motion.div variants={itemVariants}>
+        <MotionLink
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          to="/projects"
+          className="inline-block mt-6 px-6 py-3 lg:px-8 lg:py-4 text-white text-base lg:text-lg font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 dark:from-[#007C7C] dark:via-[#0047AB] dark:to-blue-900 rounded-xl hover:opacity-90 transition"
+        >
+          Explore My Projects
+        </MotionLink>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+export default Hero

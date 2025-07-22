@@ -1,27 +1,53 @@
-/* src/index.css */
+
 @import "tailwindcss";
 
-/* Define a custom variant for dark mode using a class */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* You can also define your base styles here */
-/* For example, for smooth transitions when changing theme */
+
+:root{
+  --transparent: transparent;
+   --color-terracotta: #CD5C5C; /* A warm, deep red-orange */
+  --color-sage-green: #8F9779; /* A soft, calming green-gray */
+  --color-dusty-rose: #C28B8B; /* A desaturated, romantic pink */
+  --color-slate-blue: #6A8CAE; /* A muted, cool blue-gray */
+  --color-sandstone: #C8A38E; /* A warm, natural beige */
+  --color-deep-plum: #5D3754; /* A rich, dark purple */
+  --color-ocean-mist: #AECAD6; /* A very light, cool blue */
+  --color-moss-green: #5D7A6A; /* A darker, natural green */
+  --color-warm-ochre: #C1946A; /* A deep, golden yellow-brown */
+  --color-charcoal-gray: #36454F; /* A softer alternative to black */
+
+  /* Vibrant & Jewel Tones */
+  --color-sapphire: #0F52BA; /* A rich, deep blue */
+  --color-emerald-deep: #007C7C; /* A dark, vibrant teal-green */
+  --color-ruby: #E0115F; /* A strong, clear red */
+  --color-amethyst: #9966CC; /* A bright, regal purple */
+  --color-citrine: #E4D00A; /* A bright, almost neon yellow */
+  --color-jade: #00A86B; /* A bright, intense green */
+  --color-cobalt: #0047AB; /* A very intense, classic blue */
+  --color-scarlet: #FF2400; /* A vivid, fiery red */
+  --color-electric-lime: #CCFF00; /* An extremely bright, almost neon green-yellow */
+  --color-fuchsia-vibrant: #FF00FF; /* A pure, intense magenta */
+
+  /* Pastels & Lights (with a unique tint) */
+  --color-lavender-blush: #FDEEF4; /* A very light, warm pink */
+  --color-mint-cream: #F5FFFA; /* An almost white, very light green */
+  --color-powder-blue: #B0E0E6; /* A soft, light blue */
+  --color-apricot: #FBCEB1; /* A gentle, pale orange */
+  --color-periwinkle: #CCCCFF; /* A soft, slightly purple-blue */
+  --color-lemon-chiffon: #FFFACD; /* A very light, pale yellow */
+
+  /* Neutrals with undertones */
+  --color-cool-gray-light: #EBEFF2;
+  --color-warm-gray-light: #F2F0ED;
+  --color-deep-espresso: #4A2B2B; 
+}
+
+
 html.dark {
   /* This ensures a smooth transition for colors */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 html:not(.dark) {
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Optional: Define default background/text for light mode */
-body {
-  background-color: theme('colors.white'); /* Use Tailwind's default white */
-  color: theme('colors.gray.900'); /* Use Tailwind's default gray-900 */
-}
-
-/* Apply dark mode styles to the body when the 'dark' class is present */
-.dark body {
-  background-color: theme('colors.gray.900');
-  color: theme('colors.gray.50');
 }
