@@ -16,14 +16,14 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="w-full flex justify-center sticky top-0 z-50 bg-transparent">
-      <section className="w-[80vw] rounded-lg shadow-md bg-[var(--color-mint-cream)] text-[var(--color-charcoal-gray)] dark:bg-gradient-to-tr dark:from-[#063497] dark:to-[#1b0349] dark:text-white">
+    <div className="w-full flex justify-center sticky top-5 z-50 bg-transparent">
+      <section className="w-[80vw] rounded-xl shadow-md bg-[var(--color-mint-cream)] text-[var(--color-charcoal-gray)] dark:bg-gradient-to-tr dark:from-[#063497] dark:to-[#1b0349] dark:text-white">
         <div className="flex items-center justify-between px-4 py-4">
           <motion.h1
             className="text-2xl font-bold text-blue-700 dark:text-cyan-400"
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 2.5 }}
           >
             <Link to="/">YorkeDev</Link>
           </motion.h1>
@@ -35,8 +35,8 @@ const Navbar = () => {
                 key={i}
                 to={to}
                 className={({ isActive }) =>
-                  `hover:text-blue-600 dark:hover:text-cyan-300 transition duration-200 ${
-                    isActive ? "font-semibold underline underline-offset-4" : ""
+                  `hover:text-orange-600 dark:hover:text-white hover:bg-amber-200   dark:hover:bg-sky-800   transition duration-200 px-6 py-3 text-xl rounded-lg ${
+                    isActive ? "font-semibold   bg-amber-300   dark:bg-gradient-to-r  dark:from-blue-800 dark:to-blue-950" :""
                   }`
                 }
               >
@@ -68,7 +68,7 @@ const Navbar = () => {
                 key={i}
                 to={to}
                 onClick={toggleMenu}
-                className="block text-lg hover:text-blue-600 dark:hover:text-cyan-300 transition"
+                className="block text-lg  hover:text-blue-600 dark:hover:text-cyan-300 transition"
               >
                 {label}
               </Link>
