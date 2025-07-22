@@ -1,32 +1,33 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import { containerVariants, itemVariants } from "../utils/Motion"
+import { aboutVariants, containerVariants } from "../utils/Motion"
 
 const Hero = () => {
   const MotionLink = motion(Link)
 
   return (
     <motion.div
-      className="max-w-3xl mx-auto w-full text-center px-4"
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="max-w-3xl mx-auto w-full text-center px-4"  
     >
       <motion.h1
-        variants={itemVariants}
+        variants={aboutVariants} initial='hidden' animate="visible"
         className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
       >
         Hi, I'm <span className="text-blue-600 dark:text-blue-400">Kerauni Yorke Nyakundi</span>
       </motion.h1>
 
       <motion.p
-        variants={itemVariants}
+        variants={aboutVariants}
         className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
       >
         Full-Stack Developer | AI Innovator | Big Project Architect | Data Enthusiast
       </motion.p>
 
-      <motion.div variants={itemVariants}>
+      <motion.div variants={aboutVariants}>
         <MotionLink
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

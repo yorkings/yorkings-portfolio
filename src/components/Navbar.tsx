@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import ThemeToggle from "./Themetoggle";
+import Lightbackground from "./Lightbackground";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -17,7 +18,8 @@ const Navbar = () => {
 
   return (
     <div className="w-full flex justify-center sticky top-5 z-50 bg-transparent">
-      <section className="w-[80vw] rounded-xl shadow-md bg-[var(--color-mint-cream)] text-[var(--color-charcoal-gray)] dark:bg-gradient-to-tr dark:from-[#063497] dark:to-[#1b0349] dark:text-white">
+      <Lightbackground />
+      <section className="w-[80vw] rounded-xl shadow-md bg-transparent text-[var(--color-charcoal-gray)] dark:bg-gradient-to-tr dark:from-[#063497] dark:to-[#1b0349] dark:text-white">
         <div className="flex items-center justify-between px-4 py-4">
           <motion.h1
             className="text-2xl font-bold text-blue-700 dark:text-cyan-400"
