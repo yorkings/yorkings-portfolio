@@ -7,9 +7,9 @@ import Lightbackground from "./Lightbackground";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/projects", label: "Projects" },
-  { to: "/contact", label: "Contact" },
+  { to: "/Experience", label: "Experience" },
+  { to: "/Certificates", label: "Certificates" },
 ];
 
 const Navbar = () => {

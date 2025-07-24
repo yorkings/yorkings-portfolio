@@ -55,22 +55,35 @@ export const aboutVariants = {
     }
   }  
   export const fadeIn = (direction = "up", delay = 0) => {
-  const variants = {
-    hidden: {
-      y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
-      x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
-      opacity: 0,
-    },
-    show: {
-      y: 0,
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        delay,
-        ease: "easeOut",
+    const variants = {
+      hidden: {
+        y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
+        x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+        opacity: 0,
       },
-    },
-  }
-  return variants
+      show: {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.6,
+          delay,
+          ease: "easeOut",
+        },
+      },
+    }
+    return variants
 }
+
+export const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.25,
+      duration: 1.6,
+      type: "spring",
+    },
+  }),
+};
